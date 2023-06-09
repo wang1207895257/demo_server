@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: demo-app
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.0.108.8:8848
+        namespace: wangzf
+      config:
+        server-addr: 10.0.108.8:8848
+        namespace: wangzf
