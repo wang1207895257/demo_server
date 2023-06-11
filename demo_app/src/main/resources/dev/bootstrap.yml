@@ -1,13 +1,15 @@
-server:
-  port: 8081
 spring:
   application:
     name: demo-app
   cloud:
     nacos:
       discovery:
-        server-addr: 10.0.108.8:8848
-        namespace: wangzf
+        server-addr: 127.0.0.1:8848
+#        namespace: wangzf
       config:
-        server-addr: 10.0.108.8:8848
-        namespace: wangzf
+        server-addr: 127.0.0.1:8848
+#        namespace: wangzf
+        file-extension: properties
+        extension-configs[0]:
+          refresh: true
+          data-id: app.properties

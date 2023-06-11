@@ -14,6 +14,8 @@
         <spring.boot.version>2.0.7.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.SR4</spring.cloud.version>
         <cloud.alibaba.version>2.0.4.RELEASE</cloud.alibaba.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <swagger.bootstrap.version>1.9.3</swagger.bootstrap.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -38,12 +40,48 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger.bootstrap.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
         <module>demo_app</module>
         <module>demo_service</module>
+        <module>demo_model</module>
+        <module>common-provider</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+        </dependency>
+    </dependencies>
 </project>
