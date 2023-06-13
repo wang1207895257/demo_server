@@ -1,11 +1,15 @@
 package com.example.service.controller;
 
+import com.example.model.SysUser;
+import com.example.service.service.IServiceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.*;
+import java.util.List;
 
 @RequestMapping("serviceController")
 @RestController
@@ -23,6 +27,9 @@ public class ServiceController {
     private String username;
     @Value("${spring.datasource.password}")
     private String pwd;
+
+    @Autowired
+    private IServiceService service;
 
     @GetMapping("demo")
     public String getDemo() {
@@ -76,5 +83,11 @@ public class ServiceController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @GetMapping("getUser")
+    public List<SysUser> getUsers() {
+        List<SysUser> users = service.getUsers();
+        return users;
     }
 }

@@ -4,6 +4,7 @@ package com.example.app.controller;
 import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.config.ConfigService;
 import com.example.app.service.IAppService;
+import com.example.model.SysUser;
 import com.example.util.HttpUtil;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Properties;
 
 @RequestMapping("appController")
@@ -35,6 +37,11 @@ public class AppController {
         String url = "http://localhost:181/serviceController/demo1";
         String result= HttpUtil.doGet(url);
         System.err.println(result);
+    }
+
+    @GetMapping("getUser")
+    public List<SysUser> getUser() {
+        return appService.getUser();
     }
 
     public static void main(String[] args) {

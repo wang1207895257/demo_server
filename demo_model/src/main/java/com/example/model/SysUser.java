@@ -2,6 +2,9 @@ package com.example.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
+import java.util.Date;
+
 // create table `sys_user`
 // (
 //     `id`                 varchar(36)  NOT NULL,
@@ -12,6 +15,12 @@ import lombok.Data;
 //     `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '变更时间',
 //     PRIMARY KEY (`id`)
 @Data
-public class SysUser {
+public class SysUser implements Serializable {
 
+    private String id;
+    private String userName;
+    private String identityCode;
+    private String identityCodeType;
+    private Date createTime;
+    private Date updateTime;
 }
