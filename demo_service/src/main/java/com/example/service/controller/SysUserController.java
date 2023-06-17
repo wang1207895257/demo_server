@@ -1,6 +1,6 @@
 package com.example.service.controller;
 
-import com.example.model.SysUser;
+import com.example.model.po.SysUser;
 import com.example.service.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
