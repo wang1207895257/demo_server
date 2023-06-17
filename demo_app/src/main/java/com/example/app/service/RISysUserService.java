@@ -10,8 +10,8 @@ import java.util.List;
 @FeignClient(value = "demo-service")
 public interface RISysUserService {
 
-    @GetMapping("userController/demo1")
-    public void getService1();
+    @GetMapping("userController/testMysql")
+    public void testMysql();
 
     @GetMapping("userController/getUser")
     List<SysUser> getUsers();

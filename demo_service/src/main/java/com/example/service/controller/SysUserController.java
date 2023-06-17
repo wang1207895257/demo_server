@@ -34,8 +34,8 @@ public class SysUserController {
     @Autowired
     private ISysUserService service;
 
-    @GetMapping("demo1")
-    public void getDemo1() {
+    @GetMapping("testMysql")
+    public void testMysql() {
         System.err.println(testValue);
         // 声明Connection对象
         Connection con;
