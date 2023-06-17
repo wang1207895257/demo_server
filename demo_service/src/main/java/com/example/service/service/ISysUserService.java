@@ -7,4 +7,6 @@ import java.util.List;
 public interface ISysUserService {
 
     public List<SysUser> getUsers();
+
+    public void saveUser();
 }

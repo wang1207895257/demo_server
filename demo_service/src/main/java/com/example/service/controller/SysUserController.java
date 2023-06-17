@@ -88,4 +88,9 @@ public class SysUserController {
         List<SysUser> users = service.getUsers();
         return users;
     }
+
+    @GetMapping("saveUser")
+    public void saveUser() {
+        service.saveUser();
+    }
 }

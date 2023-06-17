@@ -13,3 +13,9 @@ spring:
         extension-configs[0]:
           refresh: true
           data-id: app.properties
+        extension-configs[1]:
+          refresh: true
+          data-id: datasource.properties
+        extension-configs[2]:
+          refresh: true
+          data-id: mysql.properties

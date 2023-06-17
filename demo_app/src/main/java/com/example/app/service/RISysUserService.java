@@ -15,4 +15,7 @@ public interface RISysUserService {
 
     @GetMapping("userController/getUser")
     List<SysUser> getUsers();
+
+    @GetMapping("userController/saveUser")
+    void saveUser();
 }

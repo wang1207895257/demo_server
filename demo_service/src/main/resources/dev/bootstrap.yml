@@ -24,3 +24,6 @@ spring:
         extension-configs[3]:
           refresh: true
           data-id: mysql.properties
+        extension-configs[4]:
+          refresh: true
+          data-id: mybatis-plus.yml

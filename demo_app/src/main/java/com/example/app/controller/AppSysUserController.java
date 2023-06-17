@@ -46,6 +46,11 @@ public class AppSysUserController {
         return appService.getUsers();
     }
 
+    @GetMapping("saveUser")
+    public void saveUser() {
+        appService.saveUser();
+    }
+
     public static void main(String[] args) {
         try {
             String nacosAddress = "127.0.0.1:8848";
