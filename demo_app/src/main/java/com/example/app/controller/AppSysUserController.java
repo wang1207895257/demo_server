@@ -3,10 +3,9 @@ package com.example.app.controller;
 
 import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.config.ConfigService;
-import com.example.app.service.IAppService;
+import com.example.app.service.RISysUserService;
 import com.example.model.SysUser;
 import com.example.util.HttpUtil;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,17 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Properties;
 
-@RequestMapping("appController")
+@RequestMapping("appUserController")
 @RestController
-public class AppController {
+public class AppSysUserController {
 
     @Autowired
-    private IAppService appService;
-
-    @GetMapping("demo")
-    public String getDemo() {
-        return appService.getService();
-    }
+    private RISysUserService appService;
 
     @GetMapping("voiddemo")
     public void getVoidDemo() {
@@ -41,7 +35,7 @@ public class AppController {
 
     @GetMapping("getUser")
     public List<SysUser> getUser() {
-        return appService.getUser();
+        return appService.getUsers();
     }
 
     public static void main(String[] args) {

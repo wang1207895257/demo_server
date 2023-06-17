@@ -8,14 +8,11 @@ import java.util.List;
 
 // @FeignClient(value = "service", url = "http://localhost:8082")
 @FeignClient(value = "demo-service")
-public interface IAppService {
+public interface RISysUserService {
 
-    @GetMapping("serviceController/demo")
-    public String getService();
-
-    @GetMapping("serviceController/demo1")
+    @GetMapping("userController/demo1")
     public void getService1();
 
-    @GetMapping("serviceController/getUser")
-    List<SysUser> getUser();
+    @GetMapping("userController/getUser")
+    List<SysUser> getUsers();
 }

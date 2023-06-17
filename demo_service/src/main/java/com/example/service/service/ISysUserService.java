@@ -4,7 +4,7 @@ import com.example.model.SysUser;
 
 import java.util.List;
 
-public interface IServiceService {
+public interface ISysUserService {
 
     public List<SysUser> getUsers();
 }

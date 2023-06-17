@@ -1,19 +1,22 @@
 package com.example.service.controller;
 
 import com.example.model.SysUser;
-import com.example.service.service.IServiceService;
+import com.example.service.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
 
-@RequestMapping("serviceController")
+@RequestMapping("userController")
 @RestController
-public class ServiceController {
+public class SysUserController {
 
     @Value("${test.value}")
     private String testValue;
@@ -23,18 +26,13 @@ public class ServiceController {
     private String port;
     @Value("${mysql.dbName}")
     private String dbName;
-    @Value("${spring.datasource.username}")
+    @Value("${mysql.username}")
     private String username;
-    @Value("${spring.datasource.password}")
+    @Value("${mysql.password}")
     private String pwd;
 
     @Autowired
-    private IServiceService service;
-
-    @GetMapping("demo")
-    public String getDemo() {
-        return testValue;
-    }
+    private ISysUserService service;
 
     @GetMapping("demo1")
     public void getDemo1() {
