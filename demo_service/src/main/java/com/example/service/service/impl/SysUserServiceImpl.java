@@ -2,8 +2,10 @@ package com.example.service.service.impl;
 
 import com.example.model.po.SysUser;
 import com.example.model.service.ISysUserDataService;
+import com.example.model.vo.SysUserVO;
 import com.example.service.mapper.SysUserMapper;
 import com.example.service.service.ISysUserService;
+import com.example.util.BeanCovertUtils;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,16 +31,11 @@ public class SysUserServiceImpl implements ISysUserService {
             for (int i = 0; i < 10; i++) {
                 SysUser user = new SysUser();
                 user.setId(UUID.randomUUID().toString().replace("-", ""));
-                // user.setUserName("wzf" + i);
-                // user.setIdentityCode("wzf" + i);
-                // user.setIdentityCodeType("1");
-                // user.setCreateTime(new Date());
-                // user.setUpdateTime(new Date());
-                user.setUser_name("wzf" + i);
-                user.setIdentity_code("wzf" + i);
-                user.setIdentity_code_type(1);
-                user.setCreate_time(new Date());
-                user.setUpdate_time(new Date());
+                user.setUserName("wzf" + i);
+                user.setIdentityCode("wzf" + i);
+                user.setIdentityCodeType("1");
+                user.setCreateTime(new Date());
+                user.setUpdateTime(new Date());
                 service.save(user);
                 // sysUsers.add(user);
             }
@@ -46,5 +43,18 @@ public class SysUserServiceImpl implements ISysUserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void testConvert() {
+        SysUser user = new SysUser();
+        user.setId(UUID.randomUUID().toString().replace("-", ""));
+        user.setUserName("wzf");
+        user.setIdentityCode("wzf");
+        user.setIdentityCodeType("1");
+        user.setCreateTime(new Date());
+        user.setUpdateTime(new Date());
+        SysUserVO sysUserVO = BeanCovertUtils.covertTo(user, SysUserVO::new);
+        System.err.println(sysUserVO);
     }
 }

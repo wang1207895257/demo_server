@@ -16,29 +16,16 @@ import java.util.Date;
 @TableName("sys_user")
 public class SysUser implements Serializable {
 
-    // @TableId(value = "id", type = IdType.AUTO)
-    // private String id;
-    // @TableField("user_name")
-    // private String userName;
-    // @TableField("identity_code")
-    // private String identityCode;
-    // @TableField("identity_code_type")
-    // private String identityCodeType;
-    // @TableField("create_time")
-    // private Date createTime;
-    // @TableField("update_time")
-    // private Date updateTime;
-
-    @TableId(value = "id", type = IdType.AUTO)
-    private String id;
-    @TableField("user_name")
-    private String user_name;
-    @TableField("identity_code")
-    private String identity_code;
-    @TableField("identity_code_type")
-    private Integer identity_code_type;
-    @TableField("create_time")
-    private Date create_time;
-    @TableField("update_time")
-    private Date update_time;
+     @TableId(value = "id", type = IdType.AUTO)
+     private String id;
+     @TableField("user_name")
+     private String userName;
+     @TableField("identity_code")
+     private String identityCode;
+     @TableField("identity_code_type")
+     private String identityCodeType;
+     @TableField("create_time")
+     private Date createTime;
+     @TableField("update_time")
+     private Date updateTime;
 }
