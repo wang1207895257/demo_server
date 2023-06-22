@@ -1,5 +1,6 @@
 package com.example.test;
 
+import com.alibaba.fastjson.JSON;
 import com.example.model.po.SysUser;
 import com.example.model.vo.SysUserVO;
 import com.example.util.BeanCovertUtils;
@@ -16,7 +17,6 @@ public class ServiceTest {
 
     @Test
     public void testDemo() {
-        System.err.println(1);
         SysUser user = new SysUser();
         user.setId(UUID.randomUUID().toString().replace("-", ""));
         user.setUserName("wzf");
@@ -25,7 +25,9 @@ public class ServiceTest {
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
         SysUserVO sysUserVO = BeanCovertUtils.covertTo(user, SysUserVO::new);
-        System.err.println(sysUserVO);
+        SysUserVO sysUserVO1 = BeanCovertUtils.deepCovertTo(user, SysUserVO.class);
+        System.err.println(JSON.toJSONString(sysUserVO));
+        System.err.println(JSON.toJSONString(sysUserVO1));
     }
 
     @Test
@@ -43,6 +45,8 @@ public class ServiceTest {
         }
 
         List<SysUserVO> sysUserVOS = BeanCovertUtils.covertListTo(sysUserList, SysUserVO::new);
-        System.err.println(sysUserVOS);
+        List<SysUserVO> sysUserVOS1 = BeanCovertUtils.deepCovertListTo(sysUserList, SysUserVO.class);
+        System.err.println(JSON.toJSONString(sysUserVOS));
+        System.err.println(JSON.toJSONString(sysUserVOS1));
     }
 }
