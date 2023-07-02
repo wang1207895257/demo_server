@@ -19,6 +19,7 @@ public class SysUserServiceImpl implements ISysUserService {
 
     @Autowired
     private SysUserMapper mapper;
+
     @Autowired
     private ISysUserDataService service;
     public List<SysUser> getUsers() {
