@@ -1,19 +1,27 @@
-package com.example.test;
+package com.example.service;
 
 import com.alibaba.fastjson.JSON;
 import com.example.model.po.SysUser;
 import com.example.model.vo.SysUserVO;
+import com.example.service.service.ISysUserService;
 import com.example.util.BeanCovertUtils;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = ServiceApplication.class)
 public class ServiceTest {
+
+    @Autowired
+    private ISysUserService userService;
 
     @Test
     public void testDemo() {

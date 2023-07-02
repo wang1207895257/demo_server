@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: dev
   application:
     name: demo-service
   cloud:
@@ -19,3 +21,9 @@ spring:
         extension-configs[2]:
           refresh: true
           data-id: datasource.properties
+        extension-configs[3]:
+          refresh: true
+          data-id: mysql.properties
+        extension-configs[4]:
+          refresh: true
+          data-id: mybatis-plus.yml
