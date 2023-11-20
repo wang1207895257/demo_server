@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.example.model.po.SysUser;
 import com.example.model.vo.SysUserVO;
 import com.example.service.service.ISysUserService;
+import com.example.service.service.transaction.impl.ITestTransactionService;
 import com.example.util.BeanCovertUtils;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
@@ -22,6 +23,8 @@ public class ServiceTest {
 
     @Autowired
     private ISysUserService userService;
+    @Autowired
+    private ITestTransactionService testTransactionService;
 
     @Test
     public void testDemo() {
@@ -56,5 +59,10 @@ public class ServiceTest {
         List<SysUserVO> sysUserVOS1 = BeanCovertUtils.deepCovertListTo(sysUserList, SysUserVO.class);
         System.err.println(JSON.toJSONString(sysUserVOS));
         System.err.println(JSON.toJSONString(sysUserVOS1));
+    }
+
+    @Test
+    public void testTransaction() {
+        testTransactionService.testTransaction();
     }
 }
