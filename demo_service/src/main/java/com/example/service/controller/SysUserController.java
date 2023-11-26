@@ -18,17 +18,17 @@ import java.util.List;
 @RestController
 public class SysUserController {
 
-    @Value("${test.value}")
+    @Value("${test.value:}")
     private String testValue;
-    @Value("${mysql.host}")
+    @Value("${mysql.host:}")
     private String host;
-    @Value("${mysql.port}")
+    @Value("${mysql.port:}")
     private String port;
-    @Value("${mysql.dbName}")
+    @Value("${mysql.dbName:}")
     private String dbName;
-    @Value("${mysql.username}")
+    @Value("${mysql.username:}")
     private String username;
-    @Value("${mysql.password}")
+    @Value("${mysql.password:}")
     private String pwd;
 
     @Autowired
